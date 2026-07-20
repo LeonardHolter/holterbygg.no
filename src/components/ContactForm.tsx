@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackFormSubmit } from "@/lib/gtag";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -36,6 +37,7 @@ export default function ContactForm() {
       }
 
       setStatus("success");
+      trackFormSubmit();
       form.reset();
     } catch {
       setError("Kunne ikke sende meldingen. Sjekk internettforbindelsen din.");

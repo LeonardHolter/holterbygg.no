@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo, Source_Sans_3 } from "next/font/google";
+import Script from "next/script";
+import { GTAG_ID } from "@/lib/gtag";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -32,6 +34,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="no" className={`${archivo.variable} ${sourceSans.variable}`}>
+      <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GTAG_ID}');
+          `}
+        </Script>
+      </head>
       <body className="min-h-screen bg-cream text-ink font-sans antialiased">
         {children}
       </body>
