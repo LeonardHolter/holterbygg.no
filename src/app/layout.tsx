@@ -15,7 +15,7 @@ const sourceSans = Source_Sans_3({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
+  process.env.NEXT_PUBLIC_SITE_URL ||
   "https://holterbygg-no-git-main-leonards-projects-5c24ce26.vercel.app";
 
 export const metadata: Metadata = {

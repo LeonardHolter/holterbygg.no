@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "edward.holter@tchas.no";
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL ?? "Holter Bygg <kontakt@holterbygg.no>";
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "edward.holter@tchas.no";
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "Holter Bygg <kontakt@holterbygg.no>";
 
 export async function POST(request: NextRequest) {
   const apiKey = process.env.RESEND_API_KEY;
