@@ -14,7 +14,12 @@ const sourceSans = Source_Sans_3({
   subsets: ["latin"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://holterbygg-no-git-main-leonards-projects-5c24ce26.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Holter Bygg – Totalentreprenør i Oslo og Viken",
   description:
     "Holter Bygg er din totalentreprenør for nybygg, tilbygg, renovering og bad i Oslo og Viken. Solid håndverk fra grunnmur til tak.",
