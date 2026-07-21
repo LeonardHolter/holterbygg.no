@@ -7,18 +7,22 @@ import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import StructuredData from "@/components/StructuredData";
 
 export default function Home() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-cream text-ink">
+      <StructuredData />
       <Header />
-      <Hero />
-      <TrustStrip />
-      <Services />
-      <About />
-      <Gallery />
-      <Testimonials />
-      <Contact />
+      <main>
+        <Hero />
+        <TrustStrip />
+        <Services />
+        <About />
+        <Gallery />
+        <Testimonials />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

@@ -18,7 +18,7 @@ export default function Services() {
             <div className="relative aspect-16/10 w-full">
               <Image
                 src={s.image}
-                alt={s.title}
+                alt={s.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover"

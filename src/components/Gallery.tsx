@@ -18,7 +18,7 @@ export default function Gallery() {
             <div key={g.id} className="relative aspect-4/3 w-full overflow-hidden">
               <Image
                 src={g.image}
-                alt={g.label}
+                alt={g.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-300 hover:scale-105"
