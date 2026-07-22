@@ -5,7 +5,17 @@ import { trackFormSubmit } from "@/lib/gtag";
 
 type Status = "idle" | "loading" | "success" | "error";
 
-export default function ContactForm() {
+type ContactFormProps = {
+  title?: string;
+  description?: string;
+  compact?: boolean;
+};
+
+export default function ContactForm({
+  title,
+  description,
+  compact = false,
+}: ContactFormProps) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
 
@@ -46,7 +56,24 @@ export default function ContactForm() {
   }
 
   return (
-    <form className="flex flex-col gap-4 bg-cream p-9" onSubmit={handleSubmit}>
+    <form
+      className={`flex flex-col gap-4 bg-cream ${compact ? "p-6 sm:p-7" : "p-9"}`}
+      onSubmit={handleSubmit}
+    >
+      {(title || description) && (
+        <div className="mb-1">
+          {title && (
+            <p className="font-heading text-[22px] font-extrabold leading-tight text-ink">
+              {title}
+            </p>
+          )}
+          {description && (
+            <p className="mt-1.5 text-[14px] leading-relaxed text-stone">
+              {description}
+            </p>
+          )}
+        </div>
+      )}
       <label className="flex flex-col gap-1.5 font-heading text-[13px] font-semibold text-ink">
         Navn
         <input
@@ -71,7 +98,7 @@ export default function ContactForm() {
         Fortell om prosjektet
         <textarea
           name="message"
-          rows={4}
+          rows={compact ? 3 : 4}
           required
           placeholder="F.eks. totalrenovering av bad, ca. 6 kvm"
           className="resize-y border border-[#ccc3b3] bg-white px-3.5 py-3 font-sans text-[15px]"
