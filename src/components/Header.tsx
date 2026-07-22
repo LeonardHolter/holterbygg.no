@@ -2,16 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "#tjenester", label: "TJENESTER" },
-  { href: "#om", label: "OM OSS" },
-  { href: "#prosjekter", label: "PROSJEKTER" },
-  { href: "#kontakt", label: "KONTAKT" },
+  { href: "/#tjenester", label: "TJENESTER" },
+  { href: "/#om", label: "OM OSS" },
+  { href: "/#prosjekter", label: "PROSJEKTER" },
+  { href: "/#kontakt", label: "KONTAKT" },
 ];
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between gap-6 border-b border-line bg-cream px-5 py-3.5 sm:px-8 lg:px-16">
-      <Link href="#top" className="flex items-center gap-2.5">
+      <Link href="/" className="flex items-center gap-2.5">
         <Image
           src="/logo.png"
           alt="Holter Bygg"
@@ -29,7 +29,7 @@ export default function Header() {
         ))}
       </nav>
       <a
-        href="#kontakt"
+        href="/#kontakt"
         className="whitespace-nowrap bg-navy px-5 py-3 font-heading text-sm font-semibold tracking-wide text-cream transition-colors hover:bg-navy-hover"
       >
         FÅ TILBUD
