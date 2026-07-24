@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const stats = [
-  { value: "15+", label: "års erfaring" },
+  { value: "30+", label: "års erfaring" },
   { value: "100%", label: "fornøyde kunder" },
   { value: "Gratis", label: "befaring" },
 ];
