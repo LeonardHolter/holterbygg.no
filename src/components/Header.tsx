@@ -5,6 +5,7 @@ const navLinks = [
   { href: "/#tjenester", label: "TJENESTER" },
   { href: "/#om", label: "OM OSS" },
   { href: "/#prosjekter", label: "PROSJEKTER" },
+  { href: "/blogg", label: "BLOGG" },
   { href: "/#kontakt", label: "KONTAKT" },
 ];
 
@@ -23,17 +24,17 @@ export default function Header() {
       </Link>
       <nav className="hidden items-center gap-8 font-heading text-[15px] font-semibold tracking-wide md:flex">
         {navLinks.map((link) => (
-          <a key={link.href} href={link.href} className="hover:text-rust">
+          <Link key={link.href} href={link.href} className="hover:text-rust">
             {link.label}
-          </a>
+          </Link>
         ))}
       </nav>
-      <a
+      <Link
         href="/#kontakt"
         className="whitespace-nowrap bg-navy px-5 py-3 font-heading text-sm font-semibold tracking-wide text-cream transition-colors hover:bg-navy-hover"
       >
         FÅ TILBUD
-      </a>
+      </Link>
     </header>
   );
 }
